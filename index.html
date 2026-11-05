@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engenharia de Software - Feira de Ciências</title>
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --card-bg: #111827;
+      --accent: #00f0ff;
+      --accent-purple: #7000ff;
+      --text: #f3f4f6;
+      --text-dim: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(112, 0, 255, 0.1));
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(to right, var(--accent), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      color: var(--text-dim);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background-color: rgba(17, 24, 39, 0.8);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .step {
+      background-color: var(--card-bg);
+      border-left: 4px solid var(--accent-purple);
+      padding: 1rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .step h3 {
+      margin-bottom: 0.3rem;
+    }
+
+    .interactive-box {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    button {
+      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: opacity 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #quiz-result {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Engenharia de Software</h1>
+    <p>Construindo a ponte entre a lógica humana e a inovação tecnológica.</p>
+  </header>
+
+  <nav>
+    <a href="#conceito">Conceito</a>
+    <a href="#ciclo">Ciclo de Vida</a>
+    <a href="#areas">Áreas de Atuação</a>
+    <a href="#interativo">Quiz Interativo</a>
+  </nav>
+
+  <main>
+    <section id="conceito">
+      <h2>O que é Engenharia de Software?</h2>
+      <p>A Engenharia de Software é uma área da computação voltada para a especificação, desenvolvimento, manutenção e criação de softwares com aplicação de tecnologias e práticas de gerenciamento de projetos e outras disciplinas, visando organização, produtividade e qualidade.</p>
+      <br>
+      <div class="grid">
+        <div class="card">
+          <h3>Sistemática</h3>
+          <p>Utiliza metodologias estruturadas e processos bem definidos para garantir previsibilidade e evitar erros.</p>
+        </div>
+        <div class="card">
+          <h3>Escalável</h3>
+          <p>Projeta sistemas capazes de crescer de centenas para milhões de usuários sem perder performance.</p>
+        </div>
+        <div class="card">
+          <h3>Qualidade</h3>
+          <p>Foco contínuo em testes, segurança, usabilidade e manutenibilidade do código gerado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ciclo">
+      <h2>Ciclo de Vida do Software</h2>
+      <div class="timeline">
+        <div class="step">
+          <h3>1. Requisitos</h3>
+          <p>Entender o problema do cliente e definir o que o sistema precisa fazer.</p>
+        </div>
+        <div class="step">
+          <h3>2. Design e Arquitetura</h3>
+          <p>Planejar a estrutura técnica, banco de dados e interface do usuário.</p>
+        </div>
+        <div class="step">
+          <h3>3. Desenvolvimento</h3>
+          <p>Escrever o código-fonte utilizando linguagens de programação e frameworks.</p>
+        </div>
+        <div class="step">
+          <h3>4. Testes</h3>
+          <p>Validar se o sistema funciona corretamente e sem falhas antes do lançamento.</p>
+        </div>
+        <div class="step">
+          <h3>5. Implantação e Manutenção</h3>
+          <p>Colocar o sistema em produção e realizar atualizações e correções contínuas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas">
+      <h2>Áreas de Atuação</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Desenvolvimento Web</h3>
+          <p>Criação de aplicações acessíveis por navegadores (Front-end e Back-end).</p>
+        </div>
+        <div class="card">
+          <h3>Desenvolvimento Mobile</h3>
+          <p>Criação de aplicativos nativos ou híbridos para iOS e Android.</p>
+        </div>
+        <div class="card">
+          <h3>Engenharia de Dados & IA</h3>
+          <p>Construção de pipelines de dados e integração de modelos de inteligência artificial.</p>
+        </div>
+        <div class="card">
+          <h3>DevOps & Cloud</h3>
+          <p>Automação de infraestrutura e gerenciamento de servidores em nuvem (AWS, Azure).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="interativo">
+      <h2>Quiz: Você conhece Engenharia de Software?</h2>
+      <div class="interactive-box">
+        <p id="question">1. Qual fase do projeto cuida do planejamento visual e arquitetural?</p>
+        <div style="margin-top: 1rem;">
+          <input type="radio" id="opt1" name="quiz" value="0">
+          <label for="opt1" id="lbl1">Testes</label><br>
+          <input type="radio" id="opt2" name="quiz" value="1">
+          <label for="opt2" id="lbl2">Design e Arquitetura</label><br>
+          <input type="radio" id="opt3" name="quiz" value="2">
+          <label for="opt3" id="lbl3">Implantação</label>
+        </div>
+        <button onclick="checkQuiz()">Enviar Resposta</button>
+        <p id="quiz-result"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto apresentado na Feira de Ciências - Engenharia de Software</p>
+  </footer>
+
+  <script>
+    function checkQuiz() {
+      const selected = document.querySelector('input[name="quiz"]:checked');
+      const result = document.getElementById('quiz-result');
+
+      if (!selected) {
+        result.style.color = '#ff4444';
+        result.innerText = 'Selecione uma opção antes de enviar!';
+        return;
+      }
+
+      if (selected.value === '1') {
+        result.style.color = '#00f0ff';
+        result.innerText = 'Resposta correta! O Design e Arquitetura definem a estrutura visual e lógica antes de programar.';
+      } else {
+        result.style.color = '#ff4444';
+        result.innerText = 'Tente novamente! Pense em qual fase cria o plano antes do código.';
+      }
+    }
+  </script>
+</body>
+</html>
