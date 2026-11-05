@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia de Software | Portfolio & Interactive Showcase</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00f2fe',
+                            purple: '#7928ca',
+                            pink: '#ff0080',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            dark: '#0a0f1d',
+                            card: '#131b2e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0f1d;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Efeitos de Gradiente no Texto */
+        .gradient-text-cyan-pink {
+            background: linear-gradient(135deg, #00f2fe 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-purple-pink {
+            background: linear-gradient(135deg, #7928ca 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-cyan-emerald {
+            background: linear-gradient(135deg, #00f2fe 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Neon Glows */
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+        }
+        .glow-purple {
+            box-shadow: 0 0 25px rgba(121, 40, 202, 0.25);
+        }
+        .glow-pink {
+            box-shadow: 0 0 25px rgba(255, 0, 128, 0.25);
+        }
+
+        /* Glassmorphic Panel */
+        .glass-panel {
+            background: rgba(19, 27, 46, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel:hover {
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f1d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7928ca;
+        }
+
+        /* Typing Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Particles Background Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative selection:bg-brand-pink selection:text-white">
+
+    <!-- Canvas de Fundo de Partículas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header / Barra de Navegação -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan via-brand-purple to-brand-pink p-[2px] transition-transform duration-300 group-hover:scale-110">
+                    <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-pink">&lt;/&gt;</i>
+                    </div>
+                </div>
+                <span class=<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia de Software | Portfolio & Interactive Showcase</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00f2fe',
+                            purple: '#7928ca',
+                            pink: '#ff0080',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            dark: '#0a0f1d',
+                            card: '#131b2e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0f1d;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Efeitos de Gradiente no Texto */
+        .gradient-text-cyan-pink {
+            background: linear-gradient(135deg, #00f2fe 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-purple-pink {
+            background: linear-gradient(135deg, #7928ca 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-cyan-emerald {
+            background: linear-gradient(135deg, #00f2fe 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Neon Glows */
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+        }
+        .glow-purple {
+            box-shadow: 0 0 25px rgba(121, 40, 202, 0.25);
+        }
+        .glow-pink {
+            box-shadow: 0 0 25px rgba(255, 0, 128, 0.25);
+        }
+
+        /* Glassmorphic Panel */
+        .glass-panel {
+            background: rgba(19, 27, 46, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel:hover {
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f1d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7928ca;
+        }
+
+        /* Typing Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Particles Background Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative selection:bg-brand-pink selection:text-white">
+
+    <!-- Canvas de Fundo de Partículas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header / Barra de Navegação -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan via-brand-purple to-brand-pink p-[2px] transition-transform duration-300 group-hover:scale-110">
+"font-bold text-xl tracking-tight text-white group-hover:text-brand-cyan transition-colors">Software<span class="text-brand-pink">Eng.</span></span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-brand-cyan transition-colors">Sobre</a>
+                <a href="#pillars" class="hover:text-brand-purple transition-colors">Pilares</a>
+                <a href="#stack" class="hover:text-brand-pink transition-colors">Tech Stack</a>
+                <a href="#playground" class="hover:text-brand-emerald transition-colors">Playground</a>
+                <a href="#projects" class="hover:text-brand-cyan transition-colors">Projetos</a>
+                <a href="#roadmap" class="hover:text-brand-amber transition-colors">Roadmap</a>
+            </nav>
+
+            <div class="hidd<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia de Software | Portfolio & Interactive Showcase</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00f2fe',
+                            purple: '#7928ca',
+                            pink: '#ff0080',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            dark: '#0a0f1d',
+                            card: '#131b2e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0f1d;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Efeitos de Gradiente no Texto */
+        .gradient-text-cyan-pink {
+            background: linear-gradient(135deg, #00f2fe 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-purple-pink {
+            background: linear-gradient(135deg, #7928ca 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-cyan-emerald {
+            background: linear-gradient(135deg, #00f2fe 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Neon Glows */
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+        }
+        .glow-purple {
+            box-shadow: 0 0 25px rgba(121, 40, 202, 0.25);
+        }
+        .glow-pink {
+            box-shadow: 0 0 25px rgba(255, 0, 128, 0.25);
+        }
+
+        /* Glassmorphic Panel */
+        .glass-panel {
+            background: rgba(19, 27, 46, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel:hover {
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f1d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7928ca;
+        }
+
+        /* Typing Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Particles Background Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative selection:bg-brand-pink selection:text-white">
+
+    <!-- Canvas de Fundo de Partículas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header / Barra de Navegação -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan via-brand-purple to-brand-pink p-[2px] transition-transform duration-300 group-hover:scale-110">
+                    <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-pink">&lt;/&gt;</i>
+                    </div>
+                </div>
+                <span class=<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia de Software | Portfolio & Interactive Showcase</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00f2fe',
+                            purple: '#7928ca',
+                            pink: '#ff0080',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            dark: '#0a0f1d',
+                            card: '#131b2e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0f1d;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Efeitos de Gradiente no Texto */
+        .gradient-text-cyan-pink {
+            background: linear-gradient(135deg, #00f2fe 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-purple-pink {
+            background: linear-gradient(135deg, #7928ca 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-cyan-emerald {
+            background: linear-gradient(135deg, #00f2fe 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Neon Glows */
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+        }
+        .glow-purple {
+            box-shadow: 0 0 25px rgba(121, 40, 202, 0.25);
+        }
+        .glow-pink {
+            box-shadow: 0 0 25px rgba(255, 0, 128, 0.25);
+        }
+
+        /* Glassmorphic Panel */
+        .glass-panel {
+            background: rgba(19, 27, 46, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel:hover {
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f1d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7928ca;
+        }
+
+        /* Typing Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Particles Background Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative selection:bg-brand-pink selection:text-white">
+
+    <!-- Canvas de Fundo de Partículas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header / Barra de Navegação -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan via-brand-purple to-brand-pink p-[2px] transition-transform duration-300 group-hover:scale-110">
+"font-bold text-xl tracking-tight text-white group-hover:text-brand-cyan transition-colors">Software<span class="text-brand-pink">Eng.</span></span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-brand-cyan transition-colors">Sobre</a>
+                <a href="#pillars" class="hover:text-brand-purple transition-colors">Pilares</a>
+en md:flex items-center space-x-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-brand-purple to-brand-pink hover:opacity-90 transition-all duration-300 glow-purple">
+                    Contato
+                </a>
+            </div>
+
+            <!-- Botão Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Collapsible -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block text-slate-300 hover:text-brand-cyan py-2 transition-colors">Sobre</a>
+            <a href="#pillars" class="block text-slate-300 hover:text-brand-purple py-2 transition-colors">Pilares</a>
+            <a href="#stack" class="block text-slate-300 hover:text-brand-pink py-2 transition-colors">Tech Stack</a>
+            <a href="#playground" class="block text-slate-300 hover:text-brand-emerald py-2 transition-colors">Playground</a>
+            <a href="#projects" class="block text-slate-300 hover:text-brand-cyan py-2 transition-colors">Projetos</a>
+            <a href="#roadmap" class="block text-slate-300 hover:text-brand-amber py-2 transition-colors">Roadmap</a>
+            <a href="#contact" class="block w-full text-center px-4 py-2.5 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-purple to-brand-pink">
+                Contato
+            </a>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="relative z-10 pt-20">
+
+        <!-- 1. HERO SECTION -->
+        <section id="about" class="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative py-16">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel border-brand-cyan/30 text-brand-cyan text-xs sm:text-sm font-mono mb-8 animate-pulse">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-emerald inline-block"></span>
+                    <span>Engenharia de Software de Alta Performance</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Construindo Sistemas Escaláveis & <br/>
+                    <span class="gradient-text-cyan-pink" id="typing-text"></span><span class="typing-cursor text-brand-pink"></span>
+                </h1>
+
+                <p class="text-base sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Transformando requisitos complexos em arquiteturas robustas, pipelines automatizados e aplicações modernas orientadas a testes e qualidade de código.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-brand-cyan via-brand-purple to-brand-pink hover:scale-105 transition-all duration-300 shadow-lg glow-cyan flex items-center justify-center space-x-2">
+                        <span>Ver Projetos</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-200 glass-panel hover:bg-slate-800 hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 border border-slate-700">
+                        <i class="fa-brands fa-github text-xl"></i>
+                        <span>Meu GitHub</span>
+                    </a>
+                </div>
+
+                <!-- Métricas -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-slate-800/80">
+                    <div class="glass-panel p-4 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-cyan font-mono">99.9%</div>
+                        <div class="text-xs sm:text-sm text-slate-400 mt-1">Disponibilidade / SLA</div>
+                    </div>
+                    <div class="glass-panel p-4 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-purple font-mono">100%</div>
+                        <div class="text-xs sm:text-sm text-slate-400 mt-1">CI/CD Automatizado</div>
+                    </div>
+                    <div class="glass-panel p-4 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-pink font-mono">&lt;50ms</div>
+                        <div class="text-xs sm:text-sm text-slate-400 mt-1">Tempo de Resposta API</div>
+                    </div>
+                    <div class="glass-panel p-4 rounded-2xl text-center">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-emerald font-mono">Clean Code</div>
+                        <div class="text-xs sm:text-sm text-slate-400 mt-1">Arquitetura Sólida</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PILARES DA ENGENHARIA DE SOFTWARE -->
+        <section id="pillars" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            <div class="text-center mb-16">
+                <h2 class="text-xs sm:text-sm font-mono tracking-widest text-brand-purple uppercase mb-2">// Boas Práticas & Metodologias</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold text-white">Pilares do Desenvolvimento</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Fundamentos essenciais para garantir a sustentabilidade, escalabilidade e manutenibilidade do software.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="glass-panel p-8 rounded-3xl group hover:border-brand-cyan/50 transition-all duration-500">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Clean Code & SOLID</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Escrita de código legível, autoexplicativo e modularizado, seguindo os 5 princípios SOLID para reduzir dívidas técnicas.
+                    </p>
+                    <span class="text-xs font-mono text-brand-cyan">✓ Facilidade de Manutenção</span>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="glass-panel p-8 rounded-3xl group hover:border-brand-purple/50 transition-all duration-500">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-purple/10 border border-brand-purple/30 flex items-center justify-center text-brand-purple text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Arquitetura de Software</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Padrões como Clean Architecture, Hexagonal e Microsserviços para desvincular as regras de negócio de frameworks e banco de dados.
+                    </p>
+                    <span class="text-xs font-mono text-brand-purple">✓ Desacoplamento & Reuso</span>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="glass-panel p-8 rounded-3xl group hover:border-brand-pink/50 transition-all duration-500">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-pink/10 border border-brand-pink/30 flex items-center justify-center text-brand-pink text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-vial-circle-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Testes & Qualidade (TDD)</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Garantia de cobertura com testes unitários, de integração e e2e para assegurar entregas seguras e sem regressões.
+                    </p>
+                    <span class="text-xs font-mono text-brand-pink">✓ Confiabilidade em Produção</span>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="glass-panel p-8 rounded-3xl group hover:border-brand-emerald/50 transition-all duration-500">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-emerald/10 border border-brand-emerald/30 flex items-center justify-center text-brand-emerald text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-infinity"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">DevOps & CI/CD</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Automação de compilação, testes e deploys contínuos utilizando GitHub Actions, Docker e ambientes de nuvem.
+                    </p>
+                    <span class="text-xs font-mono text-brand-emerald">✓ Entrega Contínua</span>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="glass-panel p-8 rounded-3xl group hover:border-brand-amber/50 transition-all duration-500">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Metodologias Ágeis</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Trabalho com Scrum e Kanban, promovendo iterações rápidas, feedback constante e alinhamento direto com os objetivos do produto.
+                    </p>
+                    <span class="text-xs font-mono text-brand-amber">✓ Entrega de Valor Agregado</span>
+                </div>
+
+                <!-- Pillar 6 -->
+                <div class="glass-panel p-8 rounded-3xl group hover:border-brand-cyan/50 transition-all duration-500">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Segurança & DevSecOps</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Práticas de segurança integradas desde a concepção do código (OWASP), validação de dependências e criptografia.
+                    </p>
+                    <span class="text-xs font-mono text-brand-cyan">✓ Proteção de Dados</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TECH STACK COM FILTROS -->
+        <section id="stack" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-xs sm:text-sm font-mono tracking-widest text-brand-cyan uppercase mb-2">// Habilidades Técnicas</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold text-white">Tech Stack</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Tecnologias dominadas e utilizadas no dia a dia do engenheiro de software.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-10" id="stack-filters">
+                <button data-filter="all" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 bg-gradient-to-r from-brand-cyan to-brand-purple text-white glow-cyan">Todos</button>
+                <button data-filter="frontend" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-slate-300 hover:text-white">Frontend</button>
+                <button data-filter="backend" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-slate-300 hover:text-white">Backend</button>
+                <button data-filter="devops" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-slate-300 hover:text-white">DevOps & Cloud</button>
+                <button data-filter="tools" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-slate-300 hover:text-white">Data / Tools</button>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" id="stack-grid">
+                <!-- Inserido dinamicamente pelo JS -->
+            </div>
+        </section>
+
+        <!-- 4. PLAYGROUND DE PADRÕES DE PROJETO -->
+        <section id="playground" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-xs sm:text-sm font-mono tracking-widest text-brand-emerald uppercase mb-2">// Interactive Playground</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold text-white">Design Patterns em Ação</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Selecione um padrão de projeto clássico (GoF) para ver a implementação e simular a execução.</p>
+            </div>
+
+            <div class="glass-panel rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
+                <!-- Barra superior do Editor -->
+                <div class="bg-slate-900/90 px-6 py-4 flex flex-wrap items-center justify-between border-b border-slate-800 gap-4">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3.5 h-3.5 rounded-full bg-red-500/80 inline-block"></span>
+                        <span class="w-3.5 h-3.5 rounded-full bg-yellow-500/80 inline-block"></span>
+                        <span class="w-3.5 h-3.5 rounded-full bg-green-500/80 inline-block"></span>
+                        <span class="ml-4 font-mono text-xs text-slate-400" id="current-filename">singleton.js</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2" id="pattern-selector">
+                        <button data-pattern="singleton" class="px-3.5 py-1.5 rounded-lg font-mono text-xs bg-brand-purple/20 text-brand-purple border border-brand-purple/30 hover:bg-brand-purple/30 transition-colors">Singleton</button>
+                        <button data-pattern="factory" class="px-3.5 py-1.5 rounded-lg font-mono text-xs glass-panel text-slate-300 hover:text-white transition-colors">Factory Method</button>
+                        <button data-pattern="observer" class="px-3.5 py-1.5 rounded-lg font-mono text-xs glass-panel text-slate-300 hover:text-white transition-colors">Observer</button>
+                    </div>
+                </div>
+
+                <!-- Corpo do Editor -->
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <!-- Código -->
+                    <div class="p-6 bg-slate-950 font-mono text-xs sm:text-sm text-slate-300 overflow-x-auto border-b lg:border-b-0 lg:border-r border-slate-800 min-h-[300px]">
+                        <pre><code id="code-content" class="text-slate-300"></code></pre>
+                    </div>
+
+                    <!-- Output Console -->
+                    <div class="p-6 bg-slate-900/50 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-mono text-xs uppercase tracking-wider text-slate-400">Terminal Output:</span>
+                                <button id="run-code-btn" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-brand-emerald to-brand-cyan hover:opacity-90 transition-all flex items-center space-x-2 shadow-md">
+                                    <i class="fa-solid fa-play text-xs"></i>
+                                    <span>Executar Padrão</span>
+                                </button>
+                            </div>
+                            <div id="console-output" class="bg-black/70 rounded-xl p-4 font-mono text-xs text-brand-cyan min-h-[180px] whitespace-pre-wrap border border-slate-800">
+                                Clique em "Executar Padrão" para ver a saída no terminal simular a execução...
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                            <span>Conceito: <span id="pattern-desc" class="text-slate-300 font-semibold">Garante uma única instância global.</span></span>
+                            <button id="copy-code-btn" class="hover:text-white transition-colors flex items-center space-x-1">
+                                <i class="fa-solid fa-copy"></i>
+                                <span>Copiar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PROJETOS EM DESTAQUE -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-xs sm:text-sm font-mono tracking-widest text-brand-pink uppercase mb-2">// Portfolio</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold text-white">Projetos de Destaque</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Soluções desenvolvidas focando em alta disponibilidade e Clean Code.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-10" id="project-filters">
+                <button data-pfilter="all" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 bg-gradient-to-r from-brand-pink to-brand-purple text-white glow-pink">Todos</button>
+                <button data-pfilter="backend" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-slate-300 hover:text-white">Backend & APIs</button>
+                <button data-pfilter="fullstack" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-slate-300 hover:text-white">Fullstack</button>
+                <button data-pfilter="devops" class="px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 glass-panel text-slate-300 hover:text-white">Cloud / Infra</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Gerado por JS -->
+            </div>
+        </section>
+
+        <!-- 6. ROADMAP DE APRENDIZADO -->
+        <section id="roadmap" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs sm:text-sm font-mono tracking-widest text-brand-amber uppercase mb-2">// Trilha de Aprendizado</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold text-white">Roadmap em Engenharia</h3>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Trajetória contínua de evolução técnica e arquitetural.</p>
+            </div>
+
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-cyan group-hover:scale-125 transition-transform"></div>
+                    <div class="hidden md:block absolute -left-36 top-1 font-mono text-xs text-brand-cyan">Fase 1: Fundamentos</div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <span class="md:hidden inline-block font-mono text-xs text-brand-cyan mb-2">Fase 1: Fundamentos</span>
+                        <h4 class="text-xl font-bold text-white">Algoritmos & Lógica de Programação</h4>
+                        <p class="text-slate-400 text-sm mt-2">Estruturas de dados complexas (Árvores, Grafos, Hash Tables), Análise de Complexidade (Big O) e Orientação a Objetos avançada.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-purple group-hover:scale-125 transition-transform"></div>
+                    <div class="hidden md:block absolute -left-36 top-1 font-mono text-xs text-brand-purple">Fase 2: Arquitetura</div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <span class="md:hidden inline-block font-mono text-xs text-brand-purple mb-2">Fase 2: Arquitetura</span>
+                        <h4 class="text-xl font-bold text-white">Design Systems & Padrões Distribuidos</h4>
+                        <p class="text-slate-400 text-sm mt-2">Aplicação de Clean Architecture, Domain-Driven Design (DDD), Mensageria (Kafka/RabbitMQ) e bancos SQL/NoSQL.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-pink group-hover:scale-125 transition-transform"></div>
+                    <div class="hidden md:block absolute -left-36 top-1 font-mono text-xs text-brand-pink">Fase 3: Escala & Nuvem</div>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <span class="md:hidden inline-block font-mono text-xs text-brand-pink mb-2">Fase 3: Escala & Nuvem</span>
+                        <h4 class="text-xl font-bold text-white">DevOps, Kubernetes & Observabilidade</h4>
+                        <p class="text-slate-400 text-sm mt-2">Conteinerização, Orquestração com K8s, Infraestrutura como Código (Terraform) e monitoramento com Grafana/Prometheus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FORMULÁRIO DE CONTATO -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl relative overflow-hidden border border-slate-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h2 class="text-xs sm:text-sm font-mono tracking-widest text-brand-cyan uppercase mb-2">// Conecte-se comigo</h2>
+                        <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Vamos Conversar?</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                            Procurando um engenheiro de software para somar ao seu time ou desenvolver um projeto do zero? Envie uma mensagem!
+                        </p>
+
+                        <div class="space-y-4">
+                            <a href="https://github.com" target="_blank" class="flex items-center space-x-4 text-slate-300 hover:text-brand-cyan transition-colors group">
+                                <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-brand-cyan group-hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-github text-xl"></i>
+                                </div>
+                                <span class="font-mono text-sm">github.com/seu-usuario</span>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="flex items-center space-x-4 text-slate-300 hover:text-brand-purple transition-colors group">
+                                <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-brand-purple group-hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                                </div>
+                                <span class="font-mono text-sm">linkedin.com/in/seu-perfil</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1" for="name">NOME</label>
+                            <input type="text" id="name" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-cyan transition-colors" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1" for="email">E-MAIL</label>
+                            <input type="email" id="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-cyan transition-colors" placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1" for="message">MENSAGEM</label>
+                            <textarea id="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-cyan transition-colors" placeholder="Escreva sua mensagem..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-brand-cyan via-brand-purple to-brand-pink hover:opacity-90 transition-all glow-cyan flex items-center justify-center space-x-2">
+                            <span>Enviar Mensagem</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                        <div id="form-response" class="hidden text-center text-xs font-mono p-3 rounded-xl"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 py-8 text-center text-slate-500 text-xs font-mono relative z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© <span id="year"></span> Software Engineering Showcase. Prontinho para o GitHub Pages 🚀</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalhes do Projeto -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+        <div class="glass-panel border border-slate-700 w-full max-w-2xl rounded-3xl p-6 sm:p-8 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Scripts em JS Puro -->
+    <script>
+        // Dados das Stacks
+        const stackItems = [
+            { name: 'TypeScript', category: 'frontend', icon: 'fa-brands fa-js', level: '95%', color: 'text-blue-400' },
+            { name: 'React / Next.js', category: 'frontend', icon: 'fa-brands fa-react', level: '92%', color: 'text-cyan-400' },
+            { name: 'Tailwind CSS', category: 'frontend', icon: 'fa-solid fa-code', level: '95%', color: 'text-sky-400' },
+            { name: 'Node.js / Express', category: 'backend', icon: 'fa-brands fa-node-js', level: '90%', color: 'text-emerald-400' },
+            { name: 'Python / FastAPI', category: 'backend', icon: 'fa-brands fa-python', level: '85%', color: 'text-yellow-400' },
+            { name: 'PostgreSQL', category: 'tools', icon: 'fa-solid fa-database', level: '88%', color: 'text-indigo-400' },
+            { name: 'Docker', category: 'devops', icon: 'fa-brands fa-docker', level: '88%', color: 'text-blue-500' },
+            { name: 'Kubernetes', category: 'devops', icon: 'fa-solid fa-dharmachakra', level: '78%', color: 'text-blue-600' },
+            { name: 'AWS Cloud', category: 'devops', icon: 'fa-brands fa-aws', level: '82%', color: 'text-amber-500' },
+            { name: 'Git & Actions', category: 'devops', icon: 'fa-brands fa-github', level: '92%', color: 'text-purple-400' },
+            { name: 'GraphQL', category: 'backend', icon: 'fa-solid fa-diagram-project', level: '80%', color: 'text-pink-400' },
+            { name: 'Redis Cache', category: 'tools', icon: 'fa-solid fa-server', level: '85%', color: 'text-red-500' }
+        ];
+
+        // Dados dos Projetos
+        const projects = [
+            {
+                id: 1,
+                title: 'High-Throughput API Gateway',
+                category: 'backend',
+                tech: ['Node.js', 'Redis', 'Docker'],
+                desc: 'API Gateway com rate-limiting dinâmico e validação de tokens JWT capaz de suportar altas cargas de requisições.',
+                fullDesc: 'Construído com foco em resiliência e baixa latência. Conta com estratégias de cache distribuído via Redis, fallback automático e balanceamento de carga.'
+            },
+            {
+                id: 2,
+                title: 'DevOps & Observability Pipeline',
+                category: 'devops',
+                tech: ['Kubernetes', 'Prometheus', 'Grafana'],
+                desc: 'Infraestrutura automatizada com monitoramento em tempo real de SLO/SLA para clusters distribuídos.',
+                fullDesc: 'Automação completa via Terraform e Helm Charts com geração de alertas em tempo real e dashboards dinâmicos para prevenção de indisponibilidade.'
+            },
+            {
+                id: 3,
+                title: 'Real-time Metrics Dashboard',
+                category: 'fullstack',
+                tech: ['React', 'TypeScript', 'Tailwind'],
+                desc: 'Interface interativa para acompanhamento de deployments e performance de microsserviços.',
+                fullDesc: 'Dashboard reativo conectado a WebSockets que renderiza métricas vitais da aplicação com suporte a temas dinâmicos e filtros avançados.'
+            }
+        ];
+
+        // Snippets de Padrões de Projeto
+        const patterns = {
+            singleton: {
+                filename: 'singleton.js',
+                desc: 'Garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a ela.',
+                code: `class DatabaseConnection {
+  constructor() {
+    if (DatabaseConnection.instance) {
+      return DatabaseConnection.instance;
+    }
+    this.connectionString = "postgres://localhost:5432/main_db";
+    DatabaseConnection.instance = this;
+  }
+
+  query(sql) {
+    return \`[DB Exec] '\${sql}' em \${this.connectionString}\`;
+  }
+}
+
+const db1 = new DatabaseConnection();
+const db2 = new DatabaseConnection();
+
+console.log("Mesma Instância?:", db1 === db2);
+console.log(db1.query("SELECT * FROM users;"));`,
+                output: `Mesma Instância?: true\n[DB Exec] 'SELECT * FROM users;' em postgres://localhost:5432/main_db`
+            },
+            factory: {
+                filename: 'factory.js',
+                desc: 'Define uma interface para criar um objeto, mas deixa as subclasses decidirem qual classe instanciar.',
+                code: `class NotificationFactory {
+  static createNotification(type) {
+    switch(type) {
+      case 'email': return { send: (msg) => \`[Email] Enviado: \${msg}\` };
+      case 'sms':   return { send: (msg) => \`[SMS] Enviado: \${msg}\` };
+      default: throw new Error('Tipo inválido');
+    }
+  }
+}
+
+const notifier = NotificationFactory.createNotification('email');
+console.log(notifier.send('Sua conta foi ativada!'));`,
+                output: `[Email] Enviado: Sua conta foi ativada!`
+            },
+            observer: {
+                filename: 'observer.js',
+                desc: 'Define uma dependência um-para-muitos entre objetos para que, quando um mude de estado, todos sejam notificados.',
+                code: `class Subject {
+  constructor() { this.observers = []; }
+  subscribe(fn) { this.observers.push(fn); }
+  notify(data) { this.observers.forEach(fn => fn(data)); }
+}
+
+const newsChannel = new Subject();
+newsChannel.subscribe(msg => console.log(\`Leitor 1 recebeu: \${msg}\`));
+newsChannel.subscribe(msg => console.log(\`Leitor 2 recebeu: \${msg}\`));
+
+newsChannel.notify("Novo Deploy Realizado com Sucesso!");`,
+                output: `Leitor 1 recebeu: Novo Deploy Realizado com Sucesso!\nLeitor 2 recebeu: Novo Deploy Realizado com Sucesso!`
+            }
+        };
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            initTypingEffect();
+            renderStack('all');
+            renderProjects('all');
+            initPatternEditor('singleton');
+            initParticleCanvas();
+            setupEventListeners();
+        });
+
+        // Efeito de Digitação
+        function initTypingEffect() {
+            const words = ['Código Limpo', 'Arquitetura Resiliente', 'Soluções Cloud-Native', 'Pipelines CI/CD'];
+            let wordIdx = 0, charIdx = 0, isDeleting = false;
+            const el = document.getElementById('typing-text');
+
+            function type() {
+                const current = words[wordIdx];
+                el.textContent = isDeleting ? current.substring(0, charIdx - 1) : current.substring(0, charIdx + 1);
+                charIdx += isDeleting ? -1 : 1;
+
+                let speed = isDeleting ? 40 : 80;
+                if (!isDeleting && charIdx === current.length) { speed = 2000; isDeleting = true; }
+                else if (isDeleting && charIdx === 0) { isDeleting = false; wordIdx = (wordIdx + 1) % words.length; speed = 400; }
+
+                setTimeout(type, speed);
+            }
+            type();
+        }
+
+        // Render Stack
+        function renderStack(filter) {
+            const grid = document.getElementById('stack-grid');
+            grid.innerHTML = '';
+            const list = filter === 'all' ? stackItems : stackItems.filter(i => i.category === filter);
+
+            list.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel p-5 rounded-2xl flex flex-col items-center text-center group hover:scale-105 transition-all duration-300 border border-slate-800 hover:border-brand-cyan/40';
+                card.innerHTML = `
+                    <div class="text-3xl ${item.color} mb-3 group-hover:scale-110 transition-transform">
+                        <i class="${item.icon}"></i>
+                    </div>
+                    <h4 class="font-bold text-sm text-white mb-2">${item.name}</h4>
+                    <div class="w-full bg-slate-900 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-gradient-to-r from-brand-cyan to-brand-pink h-full rounded-full" style="width: ${item.level}"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-400 mt-2">${item.level} Nível</span>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Render Projects
+        function renderProjects(filter) {
+            const grid = document.getElementById('projects-grid');
+            grid.innerHTML = '';
+            const list = filter === 'all' ? projects : projects.filter(p => p.category === filter);
+
+            list.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel rounded-3xl p-6 flex flex-col justify-between hover:border-brand-pink/50 transition-all duration-300 group';
+                card.innerHTML = `
+                    <div>
+                        <span class="text-xs font-mono text-brand-pink uppercase tracking-wider">${p.category}</span>
+                        <h4 class="text-xl font-bold text-white mt-1 mb-2 group-hover:text-brand-pink transition-colors">${p.title}</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">${p.desc}</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            ${p.tech.map(t => `<span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-slate-900 text-slate-300 border border-slate-800">${t}</span>`).join('')}
+                        </div>
+                        <button onclick="openModal(${p.id})" class="w-full py-2.5 rounded-xl font-semibold text-xs text-white glass-panel hover:bg-slate-800 transition-colors border border-slate-700 flex items-center justify-center space-x-2">
+                            <span>Detalhes Técnicos</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Modal
+        function openModal(id) {
+            const p = projects.find(item => item.id === id);
+            if (!p) return;
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <span class="text-xs font-mono text-brand-cyan uppercase tracking-wider">${p.category}</span>
+                <h3 class="text-2xl font-extrabold text-white mt-1 mb-4">${p.title}</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">${p.fullDesc}</p>
+                <div class="mb-6">
+                    <h5 class="text-xs font-mono text-slate-400 uppercase mb-2">Tecnologias Envolvidas</h5>
+                    <div class="flex flex-wrap gap-2">
+                        ${p.tech.map(t => `<span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-900 text-brand-cyan border border-brand-cyan/20">${t}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        // Pattern Editor
+        let activePattern = 'singleton';
+        function initPatternEditor(key) {
+            activePattern = key;
+            const item = patterns[key];
+            document.getElementById('code-content').textContent = item.code;
+            document.getElementById('current-filename').textContent = item.filename;
+            document.getElementById('pattern-desc').textContent = item.desc;
+            document.getElementById('console-output').textContent = 'Clique em "Executar Padrão" para ver a saída no terminal simular a execução...';
+        }
+
+        // Event Listeners
+        function setupEventListeners() {
+            // Menu Mobile
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            // Filtros de Stack
+            document.getElementById('stack-filters').addEventListener('click', e => {
+                if(e.target.tagName === 'BUTTON') {
+                    renderStack(e.target.dataset.filter);
+                }
+            });
+
+            // Filtros de Projetos
+            document.getElementById('project-filters').addEventListener('click', e => {
+                if(e.target.tagName === 'BUTTON') {
+                    renderProjects(e.target.dataset.pfilter);
+                }
+            });
+
+            // Seletor de Padrões no Editor
+            document.getElementById('pattern-selector').addEventListener('click', e => {
+                if(e.target.tagName === 'BUTTON') {
+                    initPatternEditor(e.target.dataset.pattern);
+                }
+            });
+
+            // Executar Código Simulado
+            document.getElementById('run-code-btn').addEventListener('click', () => {
+                const consoleOutput = document.getElementById('console-output');
+                consoleOutput.textContent = 'Compilando e executando...\n';
+                setTimeout(() => {
+                    consoleOutput.textContent = patterns[activePattern].output;
+                }, 300);
+            });
+
+            // Copiar Código
+            document.getElementById('copy-code-btn').addEventListener('click', () => {
+                navigator.clipboard.writeText(patterns[activePattern].code);
+                const btnSpan = document.querySelector('#copy-code-btn span');
+                btnSpan.textContent = 'Copiado!';
+                setTimeout(() => { btnSpan.textContent = 'Copiar'; }, 2000);
+            });
+
+            // Fechar Modal
+            document.getElementById('close-modal').addEventListener('click', () => {
+                document.getElementById('project-modal').classList.add('hidden');
+            });
+
+            // Submit do Form
+            document.getElementById('contact-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const resp = document.getElementById('form-response');
+                resp.textContent = 'Mensagem enviada com sucesso! Entrarei em contato.';
+                resp.className = 'text-center text-xs font-mono p-3 rounded-xl bg-brand-emerald/20 text-brand-emerald border border-brand-emerald/30 block';
+                document.getElementById('contact-form').reset();
+            });
+        }
+
+        // Fundo de Partículas Interativo
+        function initParticleCanvas() {
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let w = canvas.width = window.innerWidth;
+            let h = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            });
+
+            const particles = Array.from({ length: 40 }, () => ({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                r: Math.random() * 2 + 1,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                color: ['#00f2fe', '#7928ca', '#ff0080'][Math.floor(Math.random() * 3)]
+            }));
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+                particles.forEach((p, i) => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > w) p.vx *= -1;
+                    if (p.y < 0 || p.y > h) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = 0.35;
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 110) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = p.color;
+                            ctx.globalAlpha = (1 - dist / 110) * 0.12;
+                            ctx.stroke();
+                        }
+                    }
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    </script>
+</body>
+</html>
